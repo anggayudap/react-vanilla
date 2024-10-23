@@ -38,6 +38,11 @@ function CheckDiscount(props) {
 function ProductInfo(props) {
   const {category, name, isDiscount} = props;
   const price = 12000000;
+  const benefit = ["Tidak kusut terkena air","Bahan lebih halus", "Menggunakan material premium"];
+  const listBenefit = benefit.map((itemBenefit) =>
+  <li>{itemBenefit}</li>
+  );
+
   return (
     <div>
         <div className="Deskripsi">
@@ -53,6 +58,9 @@ function ProductInfo(props) {
                 University Blue nubuck overlay kulit di kaki depan, lubang tali, kerah, dan tumit kontras dengan dasar
                 putih yang tajam
                 Jordan Brand menambahkan Swoosh kulit hitam di kedua sisi dan logo hitam “ Sayap ” ke kerah</p>
+            <ul>
+                {listBenefit}
+            </ul>
             {/*<a onClick={TambahCart} href="#">Add to Cart</a>*/}
             <a onClick={(e) => TambahCart(name, e)} href="#">Add to Cart</a>
 
