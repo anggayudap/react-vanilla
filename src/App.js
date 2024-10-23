@@ -36,14 +36,15 @@ function ProductInfo(props) {
                 University Blue nubuck overlay kulit di kaki depan, lubang tali, kerah, dan tumit kontras dengan dasar
                 putih yang tajam
                 Jordan Brand menambahkan Swoosh kulit hitam di kedua sisi dan logo hitam “ Sayap ” ke kerah</p>
-            <a onClick={TambahCart} href="#">Add to Cart</a>
+            {/*<a onClick={TambahCart} href="#">Add to Cart</a>*/}
+            <a onClick={(e) => TambahCart(name, e)} href="#">Add to Cart</a>
 
         </div>
     </div>
   );
 }
 
-function TambahCart() {
-    console.log("nambah ke chart");
+function TambahCart(e) {
+    console.log("nambah ke chart.." + e);
 }
 export default App;
