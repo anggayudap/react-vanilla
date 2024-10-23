@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="Parentbox">
       <ProductImg />
-      <ProductInfo category="HOLIDAY" name="Air Jordan 1 High" />
+      <ProductInfo isDiscount="comingsoon" category="HOLIDAY" name="Air Jordan 1 High" />
     </div>
   );
 }
@@ -18,9 +18,25 @@ function ProductImg() {
   );
 }
 
+function CheckDiscount(props) {
+    const {isDiscount} = props
+        if (isDiscount === "yes"){
+            return (
+                <p>Diskon 50% off.</p>
+            );
+        } else if (isDiscount === "comingsoon") {
+            return (
+                <p>Akan ada diskon.</p>
+            );
+        } else {
+            return (
+                <p>Belum ada diskon.</p>
+            );
+        }
+}
 
 function ProductInfo(props) {
-  const {category, name} = props;
+  const {category, name, isDiscount} = props;
   const price = 12000000;
   return (
     <div>
@@ -28,6 +44,7 @@ function ProductInfo(props) {
             <p className="Cate">{category}</p>
             <h1 className="Title">{name}</h1>
             <p className="Price">IDR {price}</p>
+            <CheckDiscount isDiscount={isDiscount} />
             <p className="Info">Air Jordan 1 Tinggi “ Universitas Biru ” terinspirasi oleh jalur warna asli sepatu tanda
                 tangan pertama Michael Jordan
                 Rilis awal 2021 oleh Jordan Brand, “ Universitas Biru ” Jordan 1 hadir dalam siluet tinggi-atas yang
